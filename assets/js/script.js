@@ -140,3 +140,69 @@ function displayDivisionQuestion(operand1, operand2) {
     document.getElementById("operator").textContent = "/";
 
 }
+
+/* Saved from ScoreBoard Project */
+
+/* Set oenality functions*/
+let penalityBtn = document.getElementById('set-penality');
+penalityBtn.addEventListener('click', setPenality);
+
+function setPenality() {
+    alert('set penality function started');
+    let setPenalityInputHTML = `
+    <label for="player-team">Player team</label>
+    <input id="player-team-1" name='team' type="radio" class='radio-btn' required>1
+    <input id="player-team-2" name='team' type="radio" class='radio-btn' required>2
+    <br>
+    <label for="player-number">Player #</label>
+    <input id="player-number" type="number">
+    <label for="Penality-time">Penality Time</label>
+    <input id="pen-mins" type="number">
+    <input id="pen-scds" type="number">
+    <input type='submit'></submit>
+    `
+    let setPenalityInput = document.createElement('form');
+    setPenalityInput.id = 'penality-form';
+    setPenalityInput.innerHTML = setPenalityInputHTML;
+    document.getElementById('penality-border-setting').appendChild(setPenalityInput);
+
+    let subtmitPenality = document.getElementById('penality-form');
+    subtmitPenality.addEventListener("submit", updatePenalityBox);
+
+}
+
+/**
+ * The function will check which team the player is from and update the penality box with the
+ * player # and time
+ */
+
+function updatePenalityBox() {
+    alert('start update peneality box function');
+    let team1 = document.getElementById('player-team-1');
+    let team2 = document.getElementById('player-team-2');
+    let playerNumber = document.getElementById('player-number').value;
+    let penMins = document.getElementById('pen-mins').value;
+    let penScds = document.getElementById('pen-scds').value;
+    if (team1.checked) {
+        alert('team 1 seclected');
+        let setPenalityList = document.createElement('ul');
+        let setPenalityListHTML = `
+            <li>#${playerNumber}-------->${penMins}:${penScds}</li>
+        `
+        setPenalityList.innerHTML = setPenalityListHTML;
+        document.getElementById('penality-players-team-1').appendChild(setPenalityList);
+    
+        document.getElementById('penality-form').remove();
+    } else if (team2.checked) {
+        alert('team 2 selected');
+        let setPenalityList = document.createElement('ul');
+        let setPenalityListHTML = `
+            <li>#${playerNumber}------->${penMins}:${penScds}</li>
+        `
+        setPenalityList.innerHTML = setPenalityListHTML;
+        document.getElementById('penality-players-team-2').appendChild(setPenalityList);
+    
+        document.getElementById('penality-form').remove();
+    }
+
+}
