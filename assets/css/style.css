@@ -250,3 +250,75 @@ body {
     }
 
 }
+
+/* Style from Scoreboard */ 
+
+/*Style for penality*/
+
+#penality-panel {
+    display: inline-block;
+    width: 100%;
+    height: 12vw;
+    margin: 1vw auto 0;
+    text-align: center;
+    position: relative;
+}
+#penality-panel > div {
+    display: inline-block;
+}
+/* Penality Team 1*/
+
+#penality-team-1 {
+    width:25%;
+    height: 80%;
+    margin: auto;
+}
+
+#penality-players-team-1 {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-style: solid;
+    border-width: medium;
+    border-color: blue;
+}
+
+/* Penality Setting*/
+
+#penality-setting {
+    width:20%;
+    height: 70%;
+    position: relative;
+    margin: auto;
+}
+
+#penality-border-setting {
+    width: 100%;
+    height: 30%;
+    margin: auto;
+}
+
+#set-penality {
+    width:20%;
+    height: 50%;
+    margin: auto;
+    font-size: 1vw;
+}
+
+/* Penality team 2 */
+
+#penality-team-2 {
+    width:25%;
+    height: 80%;
+}
+
+#penality-players-team-2 {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-style: solid;
+    border-width: medium;
+    border-color: blue;
+}
+
+/* End of styling for penality panel*/
